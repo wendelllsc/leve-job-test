@@ -28,7 +28,7 @@ export default class ListagemPessoa extends Component {
 
     deletePessoa = async (elemento) => {
         const id_pessoa = elemento['id'];
-        await axios.delete('http://localhost:3001/pessoa/' + id_pessoa);
+        await axios.delete(`http://localhost:3001/pessoa/${id_pessoa}`);
         window.location = 'http://localhost:3000/pessoas';
     }
 

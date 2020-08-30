@@ -11,5 +11,5 @@ app.use(cors());
 app.use(routes);
 
 app.listen(port, () => {
-    console.log('Servidor iniciado com sucesso na porta: ' + port);
+    console.log(`Servidor iniciado com sucesso na porta: ${port}`);
 })

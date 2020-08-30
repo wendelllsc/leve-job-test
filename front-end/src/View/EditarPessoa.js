@@ -60,7 +60,7 @@ export default class EditarPessoa extends React.Component{
       }
 
       removeMatricula = async(idCurso, idPessoa) =>{
-          await axios.delete('http://localhost:3001/matricula/' + idCurso + "/" + idPessoa);
+          await axios.delete(`http://localhost:3001/matricula/${idCurso}/${idPessoa}`);
           window.location = window.location.href;
       }
 
