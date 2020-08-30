@@ -32,8 +32,14 @@ class FormCadstroPessoa extends React.Component {
         telefone: telefoneOnly,
         cpf: cpfOnly
       }
-      axios.post('http://localhost:3001/pessoa', data);
-      window.location = 'http://localhost:3000/pessoas';
+
+      if(data['nome'] === '' || data['telefone'] === '' || data['cpf'] === ''){
+        alert('Campos em branco');
+      }else{
+        axios.post('http://localhost:3001/pessoa', data);
+        window.location = 'http://localhost:3000/pessoas';
+      }
+
     }
 
 

@@ -8,11 +8,15 @@
 
 ##### 3. Executar Script de criação do banco de dados
     	3.1 - Abra o WorkBanch e conecte-se
-    	3.2 - No menu esquerdo, vá em "Data Import/Restore"
-    	3.3 - Marque a opção "Import from Self-Contained File" e clique nos três pontos para selecionar o arquivo
-    	3.4 - Selecione o arquivo "Script.sql" na raíz da pasta BACK-END
-   	3.5 - No menu "Default Schema to be Imported to" crie o banco de dados que deseja utilizar
-   	3.6 - Clique em "Start import"
-	3.7 - Na pasta BACK-END, vá em "src/config/database.js" e altere as variáveis conforme sua necessidade
+    	3.2 - No menu esquerdo, vá em Data *Import/Restore*
+    	3.3 - Marque a opção *Import from Self-Contained File* e clique nos três pontos para selecionar o arquivo
+    	3.4 - Selecione o arquivo *Script.sql* na raíz da pasta BACK-END
+   	3.5 - No menu *Default Schema to be Imported to* crie o banco de dados que deseja utilizar
+   	3.6 - Clique em *Start import*
+	3.7 - Na pasta *BACK-END*, vá em *src/config/database.js* e altere as variáveis conforme sua necessidade
+
+##### Observações
+
+_Se estiver executando esse projeto em ambiente Linux, é necessário renomear as tabalas após sua criação, pra que a primeira letra de cada tabela seja maiúscula._
 
  

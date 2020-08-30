@@ -36,9 +36,18 @@ export default class CadastroPessoaCurso extends React.Component{
         //Remove máscara para salvar no banco
         let removeMaskCPF = this.state.cpf.replace(/[ ~!@#$%^&*()_|+\-=?;:'",.<>{}[\]/]/gi, '')
 
-        const data = {cpf: removeMaskCPF, id: this.state.cursoSelecionado}
-        await axios.post('http://localhost:3001/matricula', data);
-        window.location = 'http://localhost:3000/matricula';
+        if(removeMaskCPF !== ''){
+            const data = {cpf: removeMaskCPF, id: this.state.cursoSelecionado}
+            await axios.post('http://localhost:3001/matricula', data)
+            .then(() => { 
+                window.location = window.location.href;
+            })
+            .catch(error => {
+                alert('Erro ao realizar matrícula.');
+            });
+        }else{
+            alert("Preencha os campos.");
+        }
     }
 
     render(){

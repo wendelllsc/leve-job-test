@@ -4,22 +4,35 @@ const Cursos = require('../models/Curso');
 
 module.exports = {
     async save(req, res){
-        const pessoa = await Pessoa.findAll({
+        const pessoa = await Pessoa.findOne({
             where: {
                 cpf: req.body.cpf
             }
         });
 
-        const curso = await Cursos.findAll({
+        const curso = await Cursos.findOne({
             where: {
                 id : req.body.id
             }
         });
+        
         if(!pessoa || !curso){
-            return res.status(400).json({ error: 'Não encontrado!' });
+            return res.status(404).json({ error: 'Pessoa ou curso encontrado!' });
+         }else{
+            const matriculado = await Matriculas.findOne({
+                where:{
+                    pessoa_id: pessoa['dataValues']['id'],
+                    curso_id: curso['dataValues']['id']
+                }
+            })
+    
+            if(!matriculado){
+                const matricula = await Matriculas.create({ curso_id: curso['dataValues']['id'], pessoa_id: pessoa['dataValues']['id']});
+                res.status(201).json('Pessoa matriculada com sucesso.');    
+            }else{
+                return res.status(409).json({ error: 'Aluno já matriculado neste curso.' });
+            }
          }
-        const matricula = await Matriculas.create({ curso_id: curso[0]['dataValues']['id'], pessoa_id: pessoa[0]['dataValues']['id']});
-        res.json('Pessoa matriculada com sucesso.');
     },
     async getAll(req, res){
         const id = req.params;

@@ -7,11 +7,13 @@ import Listagem from '../View/ListagemPessoas'
 import Curso from '../View/CursosListagem';
 import Editar from '../View/EditarPessoa';
 import CadastroPessoaCurso from '../View/CadastroPessoaCurso';
+import Home from '../View/Home'
 
 function RouterManagement(){
     return(
         <Router>
             <Routes>
+            <Route path='/' element={<Home />}/>
                 <Route path='/cadastro' element={<Cadastro />}/>
                 <Route path='/pessoas' element={<Listagem />}/>
                 <Route path='/cursos' element={<Curso />} />
