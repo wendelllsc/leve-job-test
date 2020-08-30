@@ -1,0 +1,13 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Header(){
+    return(
+        <div className='d-flex bg-white p-2 w-100 header-size'>
+            <Link className='d-flex align-items-center p-2 font-weight-bold mr-2 text-decoration-none' to='/pessoas'>Listagem</Link>
+            <Link className='d-flex align-items-center p-2 font-weight-bold mr-2 text-decoration-none' to='/cadastro'>Cadastro</Link>
+            <Link className='d-flex align-items-center p-2 font-weight-bold mr-2 text-decoration-none' to='/cursos'>Cursos</Link>
+        </div>
+    );
+}
+export default Header;
