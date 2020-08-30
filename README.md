@@ -1,12 +1,12 @@
 #SEQUÊNCIA PARA INICIALIZAÇÃO DO PROJETO
 
-##Certifique-se de ter o Node e o MYSQL instalado.
+## Certifique-se de ter o Node e o MYSQL instalado.
 
-#1. No terminal do *FRONT-END* executar o comando: *npm install node-modules*
+##### 1. No terminal do *FRONT-END* executar o comando: *npm install node-modules*
 
-#2. No terminal do *BACK-END* executar o comando: *npm install node-modules*
+##### 2. No terminal do *BACK-END* executar o comando: *npm install node-modules*
 
-# 3. Executar Script de criação do banco de dados
+##### 3. Executar Script de criação do banco de dados
     	3.1 - Abra o WorkBanch e conecte-se
     	3.2 - No menu esquerdo, vá em "Data Import/Restore"
     	3.3 - Marque a opção "Import from Self-Contained File" e clique nos três pontos para selecionar o arquivo
