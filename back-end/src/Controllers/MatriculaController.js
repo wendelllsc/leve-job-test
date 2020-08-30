@@ -4,21 +4,21 @@ const Cursos = require('../models/Curso');
 
 module.exports = {
     async save(req, res){
-        const id_pessoa = req.params;
-        const nomeCurso = req.body;
-
-        const pessoa = await Pessoa.findByPk(id_pessoa['id']);
-        const curso = await Cursos.findAll({
+        const pessoa = await Pessoa.findAll({
             where: {
-                nomeCurso : nomeCurso['nomeCurso']
+                cpf: req.body.cpf
             }
         });
 
+        const curso = await Cursos.findAll({
+            where: {
+                id : req.body.id
+            }
+        });
         if(!pessoa || !curso){
             return res.status(400).json({ error: 'Não encontrado!' });
-        }
-
-        const matricula = await Matriculas.create({ curso_id: curso[0]['dataValues']['id'], pessoa_id: id_pessoa['id']});
+         }
+        const matricula = await Matriculas.create({ curso_id: curso[0]['dataValues']['id'], pessoa_id: pessoa[0]['dataValues']['id']});
         res.json('Pessoa matriculada com sucesso.');
     },
     async getAll(req, res){
@@ -34,7 +34,8 @@ module.exports = {
     async delete(req, res){
         await Matriculas.destroy({
             where: {
-                id: req.params['id']
+                pessoa_id: req.params['idPessoa'],
+                curso_id: req.params['idCurso']
             }
         })
         res.json("Deletado com sucesso");

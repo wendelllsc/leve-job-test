@@ -7,6 +7,7 @@ function Header(){
             <Link className='d-flex align-items-center p-2 font-weight-bold mr-2 text-decoration-none' to='/pessoas'>Listagem</Link>
             <Link className='d-flex align-items-center p-2 font-weight-bold mr-2 text-decoration-none' to='/cadastro'>Cadastro</Link>
             <Link className='d-flex align-items-center p-2 font-weight-bold mr-2 text-decoration-none' to='/cursos'>Cursos</Link>
+            <Link className='d-flex align-items-center p-2 font-weight-bold mr-2 text-decoration-none' to='/matricula'>Realizar Matrícula</Link>
         </div>
     );
 }

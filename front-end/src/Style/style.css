@@ -26,3 +26,6 @@ body{
 .cursor-pointer{
     cursor: pointer;
 }
+.w300{
+    width: 300px;
+}

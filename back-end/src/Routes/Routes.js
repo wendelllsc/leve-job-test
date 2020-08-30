@@ -12,9 +12,9 @@ routes.put('/pessoa', PessoaController.update);
 routes.delete('/pessoa/:id_pessoa', PessoaController.delete);
 
 //Matricula
-routes.post('/matricula/:id', MatriculaController.save);
+routes.post('/matricula', MatriculaController.save);
 routes.get('/matricula/:id', MatriculaController.getAll);
-routes.delete('/matricula/:id', MatriculaController.delete);
+routes.delete('/matricula/:idCurso/:idPessoa', MatriculaController.delete);
 
 // Cursos
 routes.get('/cursos', CursoController.buscarCurso);
