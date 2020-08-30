@@ -14,6 +14,10 @@
     - No menu "Default Schema to be Imported to" crie o banco de dados que deseja utilizar
     - Clique em "Start import"
     - Na pasta BACK-END, vá em "src/config/database.js" e altere as variáveis conforme sua necessidade
+ 
+##### Subindo *FRONT-END*: *npm start*
+
+##### Subindo *BACK-END*: *npm run dev*
 
 
  
