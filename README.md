@@ -19,5 +19,9 @@
 
 ##### Subindo *BACK-END*: *npm run dev*
 
+##### Observações
+
+_Se estiver executando esse projeto em ambiente Linux, é necessário renomear as tabalas após sua criação, pra que a primeira letra de cada tabela seja maiúscula._
+
 
  
