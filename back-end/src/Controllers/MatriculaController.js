@@ -30,7 +30,7 @@ module.exports = {
                 const matricula = await Matriculas.create({ curso_id: curso['dataValues']['id'], pessoa_id: pessoa['dataValues']['id']});
                 res.status(201).json('Pessoa matriculada com sucesso.');    
             }else{
-                return res.status(409).json({ error: 'Aluno já matriculado neste curso.' });
+                res.status(404).json('Aluno já matriculado neste curso.');
             }
          }
     },

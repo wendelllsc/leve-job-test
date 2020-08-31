@@ -55,13 +55,16 @@ export default class EditarPessoa extends React.Component{
           cpf: removeMaskCPF,
           id: this.state.id
         }
-        await axios.put('http://localhost:3001/pessoa/', data);
-        window.location = 'http://localhost:3000/pessoas';
+        await axios.put('http://localhost:3001/pessoa/', data)
+            .then(() => { window.location = 'http://localhost:3000/pessoas'; })
+            .catch(error => { console.log(error) });
+        
       }
 
       removeMatricula = async(idCurso, idPessoa) =>{
-          await axios.delete(`http://localhost:3001/matricula/${idCurso}/${idPessoa}`);
-          window.location = window.location.href;
+          await axios.delete(`http://localhost:3001/matricula/${idCurso}/${idPessoa}`)
+            .then(() => { window.location = window.location.href })
+            .catch(error => { console.log(error) });
       }
 
     render(){

@@ -15,8 +15,9 @@ export default class CursosListagem extends React.Component{
     }
 
     onload = async() =>{
-        const data = await axios.get('http://localhost:3001/cursos');
-        this.setState({ cursos: data['data'] });
+        await axios.get('http://localhost:3001/cursos')
+            .then(response => { this.setState({ cursos: response.data }) })
+            .catch(error => console.log(error));
     }
 
     render(){

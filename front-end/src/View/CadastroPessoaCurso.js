@@ -20,8 +20,10 @@ export default class CadastroPessoaCurso extends React.Component{
     }
 
     loadCursos = async() =>{
-        const data = await axios.get('http://localhost:3001/cursos');
-        this.setState({ cursos: data['data'] });
+        await axios.get('http://localhost:3001/cursos')
+            .then(response => { this.setState({ cursos: response.data }) })
+            .catch(error => { alert(error) });
+        
     }
 
     handleChange(event){
@@ -43,7 +45,7 @@ export default class CadastroPessoaCurso extends React.Component{
                 window.location = window.location.href;
             })
             .catch(error => {
-                alert('Erro ao realizar matrícula.');
+                console.log(error);
             });
         }else{
             alert("Preencha os campos.");

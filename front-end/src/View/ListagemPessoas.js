@@ -17,8 +17,9 @@ export default class ListagemPessoa extends Component {
     }
 
     loadData = async () => {
-        const data = await axios.get('http://localhost:3001/pessoa');
-        this.setState({ pessoas: data['data'] });
+        await axios.get('http://localhost:3001/pessoa')
+            .then(response => { this.setState({ pessoas: response.data }) })
+            .catch(error => console.log(error));
     }
 
     editarPessoa (elemento){
